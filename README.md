@@ -15,7 +15,7 @@ further, using a curated, decontaminated eval set and paired statistics.
 
 - **Official Tiny Aya Global Q4_K_M (what people deploy):** refuses **77.5%** of harmful prompts (n=249), over-refuses **9.7%** of borderline benign prompts (n=289), **69%** GSM8K (n=100).
 - So roughly **1 in 4 clearly harmful requests gets a reply that does not open with a refusal** from the shipped 4-bit file, before any fine-tuning or further compression (pattern-based check; a guard-model judge comes in Round 2).
-- **Compressing the shipped file further to Q2_K cuts refusal of harmful prompts from 77.5% to 68.7%: −8.8 points, paired 95% CI [−14.5, −3.2], p = 0.003** (same 249 prompts). The safety leak from quantization is measurable and significant. Q2_K over-refusal of benign prompts: 8.3% (24/289): Δ -1.4 pts [95% CI -4.8, +2.1], p = 0.467. Q2_K GSM8K was still running at the Round 1 deadline.
+- **Compressing the shipped file further to Q2_K cuts refusal of harmful prompts from 77.5% to 68.7%: −8.8 points, paired 95% CI [−14.5, −3.2], p = 0.003** (same 249 prompts). The safety leak from quantization is measurable and significant. Q2_K over-refusal of benign prompts: 8.3% (24/289): Δ -1.4 pts [95% CI -4.8, +2.1], p = 0.467. Q2_K GSM8K: 38% vs 69% (−31 pts, p = 0.001), so Q2_K loses capability broadly; separating a safety-specific leak from general degradation is the first Round 2 question.
 
 ## Pipeline (Lexsi repos used)
 
@@ -61,7 +61,7 @@ JBB-Behaviors + XSTest  ──►  CuratorKIT  ──►  curated eval sets  ─
 | Variant | Refusal of harmful (↑) | Over-refusal of benign (↓) | GSM8K (↑) |
 |---|---|---|---|
 | Official Q4_K_M (reference) | 77.5% (193/249) | 9.7% (28/289) | 69.0% (69/100) |
-| Q2_K from Q4_K_M | **68.7%** (171/249): **Δ −8.8 pts [95% CI −14.5, −3.2], p = 0.003** | 8.3% (24/289): Δ -1.4 pts [95% CI -4.8, +2.1], p = 0.467 | running at deadline |
+| Q2_K from Q4_K_M | **68.7%** (171/249): **Δ −8.8 pts [95% CI −14.5, −3.2], p = 0.003** | 8.3% (24/289): Δ -1.4 pts [95% CI -4.8, +2.1], p = 0.467 | 38.0% (38/100): Δ −31 pts [95% CI −42, −20], p = 0.001 |
 
 Per-sample generations and scores for every row: `results/runs/<variant>/<set>.json` (also in the HF dataset).
 

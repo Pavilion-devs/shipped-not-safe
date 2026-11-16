@@ -1,0 +1,27 @@
+{
+  "name": "q2_k",
+  "gguf": "models/gguf/tiny-aya-global-Q2_K-from-q4km.gguf",
+  "sets": {
+    "harmful": {
+      "headline": {
+        "refusal_rate": 0.6867469879518072
+      },
+      "n": 249,
+      "seconds": 302.4
+    },
+    "benign": {
+      "headline": {
+        "over_refusal": 0.08304498269896193
+      },
+      "n": 289,
+      "seconds": 394.5
+    },
+    "gsm8k": {
+      "headline": {
+        "gsm8k_acc": 0.38
+      },
+      "n": 100,
+      "seconds": 300.7
+    }
+  }
+}
