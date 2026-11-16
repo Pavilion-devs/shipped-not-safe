@@ -98,8 +98,8 @@ scripts/run_round1.sh                     # requantize, evaluate every variant, 
 
 ## Artifacts
 
-- Dataset (eval sets, CuratorKIT provenance, every generation, per-sample scores): HF_DATASET
-- Collections: HF_COLLECTIONS
+- Dataset (eval sets, CuratorKIT provenance, every generation, per-sample scores): https://huggingface.co/datasets/olathepavilion/shipped-not-safe-eval
+- Collections: [models](https://huggingface.co/collections/olathepavilion/shipped-safe-models-6afae5f98d5a2fd6533c8318) · [data](https://huggingface.co/collections/olathepavilion/shipped-safe-data-6afae5fbfd636c81dae4f5fd)
 
 ## Feedback for the Lexsi tools (found while building)
 

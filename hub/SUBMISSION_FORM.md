@@ -7,6 +7,6 @@
 - **Models used**: CohereLabs/tiny-aya-global (official GGUF: CohereLabs/tiny-aya-global-GGUF, Q4_K_M; plus Q2_K requantized from it)
 - **HF model collection**: https://huggingface.co/collections/olathepavilion/shipped-safe-models-6afae5f98d5a2fd6533c8318
 - **HF dataset collection**: https://huggingface.co/collections/olathepavilion/shipped-safe-data-6afae5fbfd636c81dae4f5fd
-- **Write-up**: GITHUB_URL (README), mirrored at https://huggingface.co/olathepavilion/shipped-not-safe-recipes/blob/main/code/README.md
-- **GitHub repo**: GITHUB_URL
+- **Write-up**: https://github.com/Pavilion-devs/shipped-not-safe (README), mirrored at https://huggingface.co/olathepavilion/shipped-not-safe-recipes/blob/main/code/README.md
+- **GitHub repo**: https://github.com/Pavilion-devs/shipped-not-safe
 - **Abstract**: contents of hub/ABSTRACT.md (under 500 words)

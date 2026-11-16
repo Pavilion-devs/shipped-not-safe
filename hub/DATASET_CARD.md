@@ -20,4 +20,4 @@ low-bit GGUF files people actually deploy?
 - `results/results.md` / `results.json`: paired-bootstrap deltas vs the official Q4_K_M with 95% CIs
 
 Prompts include requests for harmful content (from the public benchmarks above) and are for safety evaluation only.
-Code: see the GitHub repo linked from the collection.
+Code: https://github.com/Pavilion-devs/shipped-not-safe
