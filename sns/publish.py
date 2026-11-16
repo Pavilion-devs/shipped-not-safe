@@ -23,8 +23,9 @@ def main():
     api.create_repo(ds, repo_type="dataset", exist_ok=True, private=False)
     api.upload_folder(repo_id=ds, repo_type="dataset", folder_path=str(ROOT / "data/eval"), path_in_repo="eval",
                       commit_message="Curated eval sets (CuratorKIT) + provenance")
-    api.upload_folder(repo_id=ds, repo_type="dataset", folder_path=str(ROOT / "results"), path_in_repo="results",
-                      commit_message="AuditKIT runs: every generation, per-sample scores, results table")
+    if any((ROOT / "results").rglob("*.json")):
+        api.upload_folder(repo_id=ds, repo_type="dataset", folder_path=str(ROOT / "results"), path_in_repo="results",
+                          commit_message="AuditKIT runs: every generation, per-sample scores, results table")
     api.upload_file(repo_id=ds, repo_type="dataset", path_or_fileobj=str(ROOT / "hub/DATASET_CARD.md"),
                     path_in_repo="README.md")
 
@@ -34,6 +35,9 @@ def main():
         if f.exists():
             api.upload_file(repo_id=md, path_or_fileobj=str(f), path_in_repo=f"recipe/{f.name}")
     api.upload_file(repo_id=md, path_or_fileobj=str(ROOT / "hub/MODEL_CARD.md"), path_in_repo="README.md")
+    api.upload_folder(repo_id=md, folder_path=str(ROOT), path_in_repo="code",
+                      allow_patterns=["sns/*.py", "scripts/*.sh", "README.md", "hub/*.md", ".gitignore"],
+                      commit_message="Code mirror (also on GitHub)")
 
     mc = api.create_collection(title="Shipped != Safe: models", namespace=user, private=False, exists_ok=True,
                                description="Tiny Aya Global deployment quantizations audited for safety (Lexsi hackathon, Track 2a).")

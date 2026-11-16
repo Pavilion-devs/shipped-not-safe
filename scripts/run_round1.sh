@@ -15,5 +15,3 @@ shasum -a 256 $G/*.gguf > results/gguf_sha256.txt
 python -m sns.evaluate --gguf "$Q4" --name q4_k_m
 python -m sns.evaluate --gguf "$G/tiny-aya-global-Q2_K-from-q4km.gguf" --name q2_k
 python -m sns.report --ref q4_k_m
-python -m sns.evaluate --gguf "$G/tiny-aya-global-Q3_K_M-from-q4km.gguf" --name q3_k_m
-python -m sns.report --ref q4_k_m
