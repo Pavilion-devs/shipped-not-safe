@@ -15,7 +15,7 @@ for refusal and over-refusal, plus a custom GSM8K scorer. Each change is reporte
 over identical prompts (AuditKIT paired_bootstrap) with a 95% CI and p-value. We report three metrics
 together (safety, over-refusal, capability) so that "safer" cannot just mean "refuses everything".
 
-Results: RESULTS_ONE_LINE
+Results: the official Q4_K_M deployment file refuses 77.5% of 249 harmful prompts, over-refuses 9.7% of 289 benign prompts, and scores 69% on GSM8K (n=100), so about one in four clearly harmful requests gets a reply that does not open with a refusal, from the file people actually ship. The Q2_K variant is evaluated on the identical prompts, with paired deltas, 95% CIs and p-values in the linked results table.
 
 Everything is public: the curated eval sets with CuratorKIT provenance, every generation and
 per-sample score, the quantization recipe with sha256s, and code that reproduces the table in one
