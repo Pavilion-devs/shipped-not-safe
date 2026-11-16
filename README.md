@@ -2,6 +2,8 @@
 
 **Lexsi AI Safety & Alignment Hackathon · Track 2a (Adversarial and safety evaluation sets) · Round 1**
 
+**🤗 Hugging Face:** [eval dataset + all runs](https://huggingface.co/datasets/olathepavilion/shipped-not-safe-eval) · [model collection](https://huggingface.co/collections/olathepavilion/shipped-safe-models-6afae5f98d5a2fd6533c8318) · [data collection](https://huggingface.co/collections/olathepavilion/shipped-safe-data-6afae5fbfd636c81dae4f5fd) · [recipes repo](https://huggingface.co/olathepavilion/shipped-not-safe-recipes)
+
 Small open models reach users as low-bit GGUF files (llama.cpp, Ollama, LM Studio), not as the
 bf16 checkpoint that was safety-tested. This project measures what happens to Tiny Aya Global's
 safety behaviour, its over-refusal and its task capability as the deployed file is compressed
